@@ -1,0 +1,120 @@
+.gallery-container {
+  width: 1264px;
+  padding-top: 60px;
+  //   padding-bottom: 60px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+
+  color: #000000;
+}
+.gallery-img {
+  border-radius: 5px;
+}
+.gallery {
+  flex-flow: wrap;
+  column-gap: 16px;
+  row-gap: 32px;
+  display: flex;
+  flex-direction: row;
+}
+.gallery-card {
+  width: 395px;
+  border-radius: 10px;
+}
+.gallery-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.gallery-info {
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+
+  color: #ff6b08;
+  box-sizing: content-box;
+  width: 100%;
+  margin-top: 5px;
+}
+.gallery-average {
+  position: relative;
+  margin-left: 20px;
+}
+.gallery-average::after {
+  content: '';
+  width: 2px;
+  height: 16px;
+  background-color: #ff6b08;
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  left: -10px;
+}
+
+//------------------
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+.block:hover,
+.block:focus {
+  background-color: #ff6b08;
+  color: #ffffff;
+}
+
+.pagination-number {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-left: 16px;
+  margin-right: 16px;
+  color: #000000;
+}
+
+.block-point {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  color: #000000;
+}
+.current-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: #ff6b08;
+}
+.current-block:hover,
+.current-block:focus {
+  color: #000000;
+  background-color: #f97a25;
+}

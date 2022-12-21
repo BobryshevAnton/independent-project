@@ -10,17 +10,20 @@
 @import './base/base';
 
 // Components
+@import './base/components/pagination';
 // @import './components/modal';
 // @import './components/spinner';
 // @import './components/gallary';
-// @import './components/pagination';
+
 // @import './components/placeholder';
 // @import './components/arrow-up';
 // @import './components/scroll-bar';
 
 // Layouts
 @import './layout/_header';
+@import './layout/gallery-index';
+@import './layout/gallery-libryary';
+@import './layout/footer';
 
-// @import './layout/modal-film';
-// @import './layout/footer';
+@import './layout/modal';
 // @import './layout/libryari-list';
