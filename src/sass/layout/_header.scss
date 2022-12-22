@@ -1,20 +1,14 @@
 .header {
   background-color: #e5e5e5;
 }
-.header-section {
+
+.header.header-section {
   background-image: url(../images/header/desktop/index-bkgd.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-// .header-container {
-//   font-family: 'Roboto';
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 30px;
-//   line-height: 35px;
-//   color: #ffffff;
-// }
-.header-conteiner {
+
+.header-container {
   padding-top: 49px;
   padding-bottom: 41px;
 }

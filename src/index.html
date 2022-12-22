@@ -25,6 +25,7 @@
     <script src="index.js" type="module"></script>
 
     <!-- modal window -- modal window ---- modal window ---- modal ---->
+    <!-- любая кнопка на открівание модалки -->
     <button
       type="button"
       class="header__btn-modal"
@@ -33,13 +34,7 @@
     >
       Button film
     </button>
-    <div class="backdrop is-hidden" data-modal>
-      <div class="modal">
-        <p class="modal-title"><base modal /></p>
-
-        <button class="modal-btn" data-modal-close></button>
-      </div>
-    </div>
+    <include src="./partials/modal-index.html"></include>
 
     <script src="./sass/modal.js"></script>
   </body>
