@@ -20,8 +20,8 @@
 }
 
 .modal {
-  width: 806px;
-  height: 558px;
+  width: 280px;
+  // height: 940px;
   content: '';
   background-color: #ffffff;
   border-radius: 4px;
@@ -31,6 +31,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include mq(tablet) {
+    width: 704px;
+    height: 552px;
+  }
+  @include mq(desktop) {
+    width: 806px;
+    height: 558px;
+  }
 }
 
 .modal-btn {
@@ -64,48 +73,60 @@
   font-weight: 700;
   color: rgba(117, 117, 117, 1);
   font-size: 20px;
-  line-height: 1.17;
+  line-height: 1.15;
+
+  @include mq(desktop) {
+    font-size: 20px;
+    line-height: 1.17;
+  }
 }
 
 .hidden-checked {
   transform: scale(0);
 }
 
-.header__btn-modal {
-  background-color: #fdfdfd;
-  border-radius: 5px;
-  padding-left: 42px;
-  padding-right: 42px;
-  padding-top: 14px;
-  padding-bottom: 12px;
-  color: #000000;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.33;
-  text-transform: uppercase;
-  border: 2px solid #ffffff;
-  margin-left: 16px;
-}
-.header__btn-modal:hover,
-.header__btn-modal:focus {
-  background-color: #ff6b01;
-  border: 2px solid #ff6b01;
-}
-// стилі для єлементів модалки
 .modal-block {
   display: flex;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 40px;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 48px;
   padding-bottom: 40px;
+
+  @include mq(tablet) {
+    display: flex;
+    flex-direction: row;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include mq(desktop) {
+    display: flex;
+    flex-direction: row;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 .modal-fils {
   margin-right: 16px;
+  @include mq(tablet) {
+    // width: 264px;
+    margin-right: 68px;
+  }
 }
 .modal-pictures {
-  max-width: 375px;
+  min-width: 240px;
+  @include mq(tablet) {
+    min-width: 264px;
+  }
+
+  @include mq(desktop) {
+    max-width: 375px;
+  }
 }
 .modal-info {
   font-family: 'Roboto';
@@ -115,17 +136,30 @@
   line-height: 1.16;
 
   color: #000000;
+
+  @include mq(desktop) {
+    font-size: 20px;
+    line-height: 1.13;
+  }
 }
 
 table td {
-  padding-right: 83px;
+  padding-right: 41px;
+
+  @include mq(tablet) {
+    padding-right: 68px;
+  }
+  // @include mq(desktop) {
+  //   padding-right: 83px;
+  // }
 }
 .modal-title {
   color: #000000;
+  margin-top: 20px;
 }
-.modal-block {
-  width: 806px;
-}
+// .modal-block {
+//   width: 806px;
+// }
 .modal-info__film {
   font-size: 12px;
   line-height: 1.33;
@@ -155,11 +189,18 @@ table td {
 }
 
 .modal-bottom__text {
+  display: flex;
+  width: 240px;
   font-size: 12px;
   line-height: 1.66;
 
   color: #000000;
-  widows: 391px;
+  @include mq(tablet) {
+    width: 264px;
+  }
+  @include mq(desktop) {
+    width: 391px;
+  }
 }
 .modal-button__section {
   display: flex;
@@ -169,10 +210,10 @@ table td {
 .modal__btn-libryary {
   background-color: #ff6b01;
   border-radius: 5px;
-  padding-left: 42px;
-  padding-right: 42px;
-  padding-top: 14px;
-  padding-bottom: 12px;
+  padding-left: 27px;
+  padding-right: 27px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   color: #ffffff;
   font-family: 'Roboto';
   font-style: normal;
@@ -181,7 +222,19 @@ table td {
   line-height: 1.33;
   text-transform: uppercase;
   border: 2px solid #ff6b01;
-  margin-right: 16px;
+  margin-right: 20px;
+
+  @include mq(tablet) {
+    margin-right: 15px;
+    width: 125px;
+  }
+  @include mq(desktop) {
+    margin-right: 16px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
 }
 .modal__btn-libryary:last-child {
   margin-right: 0px;
