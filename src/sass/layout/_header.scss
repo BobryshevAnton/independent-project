@@ -182,6 +182,7 @@
 .current::after {
   position: absolute;
   bottom: -3px;
+  right: 0px;
   content: '';
   display: flex;
   width: 100%;
