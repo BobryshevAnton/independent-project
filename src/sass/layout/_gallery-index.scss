@@ -59,25 +59,37 @@
 }
 .gallery-info {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 12px;
   display: flex;
 
   color: #ff6b08;
   box-sizing: content-box;
   width: 100%;
   margin-top: 5px;
+  @include mq(desktop) {
+    font-size: 20px;
+  }
 }
-.gallery-average {
+.gallery-average,
+.gallery-year {
   position: relative;
   margin-left: 20px;
 }
-.gallery-average::after {
+.gallery-average::after,
+.gallery-year::after {
   content: '';
-  width: 2px;
-  height: 16px;
+  width: 1px;
+  height: 12px;
   background-color: #ff6b08;
   display: flex;
   position: absolute;
-  bottom: 5px;
+  bottom: 1px;
   left: -10px;
+
+  @include mq(desktop) {
+    width: 2px;
+    height: 16px;
+    bottom: 5px;
+    left: -10px;
+  }
 }
