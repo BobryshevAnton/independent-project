@@ -143,14 +143,12 @@
   bottom: -1px;
   content: '';
   display: flex;
-
   height: 1px;
   background-color: #ffffff;
 
   @include mq(tablet) {
     width: 336px;
   }
-
   @include mq(desktop) {
     width: 394px;
   }
@@ -176,7 +174,6 @@
 .current {
   font-weight: 505;
   position: relative;
-
   font-size: 12.5px;
 }
 .current::after {
@@ -190,9 +187,19 @@
   color: #ff001b;
   background-color: #ff001b;
 }
-.header-txt {
-  color: #ff001b;
+.text-empty {
+  visibility: visible;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  color: #ff001b;
+}
+.hiden {
+  visibility: hidden;
+  color: #ff001900;
 }
