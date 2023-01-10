@@ -3,11 +3,19 @@ import createGanres from './create-ganres';
 const searchApi = new SearchApi();
 const indexGallery = document.querySelector('.gallery-container');
 const backdropModal = document.querySelector('.backdrop');
+const modal = document.querySelector('[data-modal]');
+const btnClose = document.querySelector('[data-modal-close]');
+const modalCont = document.querySelector('.modal-block');
 
 export default function modalFilm({ results }) {
-  const modalCont = document.querySelector('.modal-block');
-  const modal = document.querySelector('[data-modal]');
   const filmMass = [...results];
+
+  btnClose.addEventListener('click', handleBtnClose);
+  function handleBtnClose(evt) {
+    if (evt.currentTarget === evt.target) {
+      modal.classList.toggle('is-hidden');
+    }
+  }
 
   indexGallery.addEventListener('click', handleClick);
   function handleClick(evt) {
@@ -62,10 +70,7 @@ export default function modalFilm({ results }) {
           </p>
         </div>
         <div class="modal-button__section">
-          <button class="modal__btn-libryary" type="button">
-            add to Watched
-          </button>
-          <button class="modal__btn-libryary" type="button">queue</button>
+          
         </div>
       </div>
     `;
@@ -74,6 +79,7 @@ export default function modalFilm({ results }) {
       }
     });
   }
+
   backdropModal.addEventListener('click', handleCloseClick);
   function handleCloseClick(evt) {
     if (evt.currentTarget === evt.target) {
