@@ -1,5 +1,6 @@
 import SearchApi from './searchApi';
 import { createGallery } from './create-gallery';
+import modalFilm from './modal-film';
 
 const form = document.querySelector('.header__form-search');
 const indexGallery = document.querySelector('.gallery-container');
@@ -35,7 +36,7 @@ function handleSubmit(event) {
 
   createPage();
 }
-let obj;
+
 function createPage() {
   searchApi.getSearchMovie(searchFilm, page).then(data => {
     createGallery(data);

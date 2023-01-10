@@ -49,7 +49,6 @@ export function createGallery({ results }) {
       `;
     })
     .join('');
-
-  indexGallery.insertAdjacentHTML('beforeend', markup);
   modalFilm({ results });
+  indexGallery.insertAdjacentHTML('beforeend', markup);
 }
