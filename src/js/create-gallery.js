@@ -7,7 +7,7 @@ const indexGallery = document.querySelector('.gallery-container');
 
 export function createGallery({ results }) {
   indexGallery.innerHTML = '';
-
+  modalFilm({ results });
   const markup = results
     .map(({ poster_path, title, release_date, vote_average, genre_ids }) => {
       let emptyImg = 'https://i.ibb.co/JyBCdzw/sinema-empty.jpg';
@@ -49,6 +49,6 @@ export function createGallery({ results }) {
       `;
     })
     .join('');
-  modalFilm({ results });
+
   indexGallery.insertAdjacentHTML('beforeend', markup);
 }
