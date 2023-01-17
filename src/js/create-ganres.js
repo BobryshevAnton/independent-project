@@ -4,7 +4,7 @@ import SearchApi from './searchApi';
 const searchApi = new SearchApi();
 
 let genresArr;
-let ganre;
+// let ganre;
 searchApi.getGanres().then(data => {
   genresArr = data.genres;
 });

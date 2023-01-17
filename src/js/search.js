@@ -1,56 +1,70 @@
 import SearchApi from './searchApi';
 import { createGallery } from './create-gallery';
-import modalFilm from './modal-film';
+import getLocalStorage from './get-localStorage';
 
 const form = document.querySelector('.header__form-search');
 const indexGallery = document.querySelector('.gallery-container');
 
-const paginationConteiner = document.querySelector('.pagination-container');
+const btnHome = document.querySelector('.btn-home');
+const btnLibryary = document.querySelector('.btn-libryary');
 
-let searchFilm = '';
-let page = 1;
+if (btnHome.classList.contains('current')) {
+  form.addEventListener('submit', handleSubmit);
+  // } else {
+  //   return;
+  // }
 
-form.addEventListener('submit', handleSubmit);
+  //
+  const paginationConteiner = document.querySelector('.pagination-container');
 
-const anyText = document.querySelector('.text-empty');
-anyText.classList.add('hiden');
-anyText.textContent =
-  'Search result not successful. Enter the correct movie name...';
-const searchApi = new SearchApi();
+  let searchFilm = '';
+  let page = 1;
 
-startPage();
+  // form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const {
-    elements: { search },
-  } = event.currentTarget;
-  searchFilm = search.value;
+  const anyText = document.querySelector('.text-empty');
+  anyText.classList.add('hiden');
+  anyText.textContent =
+    'Search result not successful. Enter the correct movie name...';
+  const searchApi = new SearchApi();
 
-  if (searchFilm === '') {
-    anyText.classList.remove('hiden');
-    return;
-  } else {
-    anyText.classList.add('hiden');
+  startPage();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const {
+      elements: { search },
+    } = event.currentTarget;
+    searchFilm = search.value;
+
+    if (searchFilm === '') {
+      anyText.classList.remove('hiden');
+      return;
+    } else {
+      anyText.classList.add('hiden');
+    }
+
+    createPage();
   }
 
-  createPage();
-}
+  function createPage() {
+    searchApi.getSearchMovie(searchFilm, page).then(data => {
+      createGallery(data);
 
-function createPage() {
-  searchApi.getSearchMovie(searchFilm, page).then(data => {
-    createGallery(data);
-    page += 1;
-  });
-}
+      page += 1;
+    });
+  }
 
-function startPage() {
-  searchFilm = 'red';
-  searchApi.getSearchMovie(searchFilm, page).then(data => {
-    createGallery(data);
-  });
+  function startPage() {
+    searchFilm = 'red';
+    searchApi.getSearchMovie(searchFilm, page).then(data => {
+      createGallery(data);
+    });
+  }
 }
-
+if (btnLibryary.classList.contains('current')) {
+  getLocalStorage();
+}
 // const arrowLeft = document.querySelector('.arrow-left');
 // arrowLeft.addEventListener('click', handlerLeftClick);
 // function handlerLeftClick(evt) {

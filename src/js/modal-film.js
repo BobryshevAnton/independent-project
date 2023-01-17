@@ -1,11 +1,15 @@
-import SearchApi from './searchApi';
+// import SearchApi from './searchApi';
 import createGanres from './create-ganres';
-const searchApi = new SearchApi();
+import btnSearch from './btn-search';
+// import dataLocal from './btn-search';
+
+// const searchApi = new SearchApi();
 const indexGallery = document.querySelector('.gallery-container');
 const backdropModal = document.querySelector('.backdrop');
 const modal = document.querySelector('[data-modal]');
 const btnClose = document.querySelector('[data-modal-close]');
 const modalCont = document.querySelector('.modal-block');
+//
 
 export default function modalFilm({ results }) {
   const filmMass = [...results];
@@ -23,6 +27,7 @@ export default function modalFilm({ results }) {
 
     filmMass.map(elem => {
       if (elem.original_title === evt.target.alt) {
+        btnSearch(elem);
         let ganresTitle = createGanres(elem.genre_ids);
         if (ganresTitle.length > 2) {
           ganresTitle = ganresTitle.slice(0, 2).join(', ') + ', Other';
@@ -69,12 +74,11 @@ export default function modalFilm({ results }) {
             ${elem.overview}
           </p>
         </div>
-        <div class="modal-button__section">
-
-        </div>
+        
       </div>
     `;
         modalCont.innerHTML = '';
+
         return modalCont.insertAdjacentHTML('afterbegin', markupModal);
       }
     });
@@ -83,14 +87,14 @@ export default function modalFilm({ results }) {
   backdropModal.addEventListener('click', handleCloseClick);
   function handleCloseClick(evt) {
     if (evt.currentTarget === evt.target) {
-      modal.classList.toggle('is-hidden');
+      modal.classList.add('is-hidden');
     }
   }
   window.addEventListener('keydown', onEscape);
 
   function onEscape(evt) {
     if (evt.code === 'Escape') {
-      modal.classList.toggle('is-hidden');
+      modal.classList.add('is-hidden');
     }
   }
 }
