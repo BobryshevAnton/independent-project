@@ -1,25 +1,24 @@
-// import SearchApi from './searchApi';
 import createGanres from './create-ganres';
 import btnSearch from './btn-search';
 
-const indexGallery = document.querySelector('.gallery-container');
-const backdropModal = document.querySelector('.backdrop');
+const indexGallery = document.querySelector('.libruary-conteiner');
+const backdropModals = document.querySelector('.backdrop');
 const modal = document.querySelector('[data-modal]');
-const btnClose = document.querySelector('[data-modal-close]');
+const btnCloses = document.querySelector('[data-modal-close]');
 const modalCont = document.querySelector('.modal-block');
-//
 
-export default function modalFilm({ results }) {
-  const filmMass = [...results];
-  btnClose.addEventListener('click', handleBtnClose);
-  function handleBtnClose(evt) {
+export default function modalLibr(filmArr) {
+  const filmMass = [...filmArr];
+
+  btnCloses.addEventListener('click', handleBtnCloses);
+  function handleBtnCloses(evt) {
     if (evt.currentTarget === evt.target) {
       modal.classList.add('is-hidden');
     }
   }
 
-  indexGallery.addEventListener('click', handleClick);
-  function handleClick(evt) {
+  indexGallery.addEventListener('click', handleClickLibr);
+  function handleClickLibr(evt) {
     modal.classList.remove('is-hidden');
 
     filmMass.map(elem => {
@@ -32,7 +31,6 @@ export default function modalFilm({ results }) {
         } else {
           ganresTitle = ganresTitle.join(', ');
         }
-
         let baseImgFilmModal = `https://image.tmdb.org/t/p/w500${elem.poster_path}`;
 
         const markupModal = `
@@ -83,7 +81,7 @@ export default function modalFilm({ results }) {
     });
   }
 
-  backdropModal.addEventListener('click', handleCloseClick);
+  backdropModals.addEventListener('click', handleCloseClick);
   function handleCloseClick(evt) {
     if (evt.currentTarget === evt.target) {
       modal.classList.add('is-hidden');

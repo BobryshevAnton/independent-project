@@ -1,18 +1,18 @@
 import SearchApi from './searchApi';
 import { createGallery } from './create-gallery';
 import getLocalStorage from './get-localStorage';
+//
+import galleryPage from './gallery-page';
 
 const form = document.querySelector('.header__form-search');
 const indexGallery = document.querySelector('.gallery-container');
 
 const btnHome = document.querySelector('.btn-home');
 const btnLibryary = document.querySelector('.btn-libryary');
+// const btnLbt = document.querySelector('.btn-lib');
 
 if (btnHome.classList.contains('current')) {
   form.addEventListener('submit', handleSubmit);
-  // } else {
-  //   return;
-  // }
 
   //
   const paginationConteiner = document.querySelector('.pagination-container');
@@ -61,10 +61,20 @@ if (btnHome.classList.contains('current')) {
       createGallery(data);
     });
   }
-}
-if (btnLibryary.classList.contains('current')) {
+} else {
   getLocalStorage();
 }
+
+//
+//
+
+// if (btnLibryary.classList.contains('current')) {
+//   const btnWatched = document.querySelector('.btn-Watched');
+//   btnWatched.classList.add('active');
+//   getLocalStorage();
+//   console.log(123);
+// }
+
 // const arrowLeft = document.querySelector('.arrow-left');
 // arrowLeft.addEventListener('click', handlerLeftClick);
 // function handlerLeftClick(evt) {

@@ -8,13 +8,23 @@ let libryaryWatched = [];
 let libruaryQueue = [];
 
 //
-// let storageJsonWatch = [];
-// storageJsonWatch.push(JSON.parse(localStorage.getItem(ADD_WATCH)));
+let storageJsonWatch = [];
+storageJsonWatch.push(JSON.parse(localStorage.getItem(ADD_WATCH)));
 
 let storageJsonQueue = [];
 
 export default function btnSearch(elem) {
   elementFilmModal = elem;
+
+  storageJsonWatch.map(storageWatch => {
+    storageWatch.map(storElem => {
+      if (storElem.title === elementFilmModal.title) {
+        addToWatch.textContent = 'Added';
+      } else {
+        addToWatch.textContent = 'add to Watched';
+      }
+    });
+  });
 
   addToWatch.addEventListener('click', handleraddToWatch);
   addToQueue.addEventListener('click', handleraddToQueue);
@@ -31,6 +41,12 @@ export default function btnSearch(elem) {
       libryaryWatched.push(elementFilmModal);
       localStorage.setItem(ADD_WATCH, JSON.stringify(libryaryWatched));
     }
+
+    // if (libryaryWatched.includes(elementFilmModal)) {
+    //   addToWatch.textContent = 'Added ';
+    // } else {
+    //   addToWatch.textContent = 'add to Watched';
+    // }
 
     //     return; addToWatch.textContent = 'Added';
     //   } else if (localStorage.length !== 0) {
@@ -56,19 +72,3 @@ export default function btnSearch(elem) {
     }
   }
 }
-// getLocalStorage();
-///
-// let storageWatch;
-// btnWatched.addEventListener('click', handlerBtnWatched);
-// function handlerBtnWatched(evt) {
-//   storageWatch = localStorage.getItem(ADD_WATCH);
-//   // const storageWatch = JSON.parse(localStorage.getItem(ADD_WATCH));
-//   console.log(storageWatch);
-// }
-
-// btnQueue.addEventListener('click', handleBtnQueue);
-// function handleBtnQueue(evt) {
-//   localStorage.getItem(ADD_TO_QUEUE);
-//   const storageQueue = JSON.parse(localStorage.getItem(ADD_TO_QUEUE));
-//   console.log(storageQueue);
-// }
