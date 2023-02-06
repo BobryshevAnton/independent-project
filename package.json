@@ -1,21 +1,21 @@
 {
-  "name": "independent-project",
+  "name": "my-independent-project",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://BobryshevAnton.github.io/independent-project/",
+  "homepage": "https://BobryshevAnton.github.io/my-independent-project/",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /independent-project/"
+    "build": "parcel build src/*.html --public-url /my-independent-project/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BobryshevAnton/independent-project.git"
+    "url": "git+https://github.com/BobryshevAnton/my-independent-project.git"
   },
   "keywords": [],
   "author": "Bobryshev Anton <antonpiligrim@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BobryshevAnton/independent-project/issues"
+    "url": "https://github.com/BobryshevAnton/my-independent-project/issues"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0"
